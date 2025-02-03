@@ -45,11 +45,11 @@ GH_REPO="https://raw.githubusercontent.com/larstel/minimalistFrameworkInstall/ma
 echo "Downloading specific files from GitHub..."
 curl -o additionalFilesForServer/static/icon.svg "$GH_REPO/static/icon.svg"
 curl -o template.html "$GH_REPO/template.html"
+curl -o buildConfig.json "$GH_REPO/buildConfig.json"
 curl -o contentTemplates/localization.json "$GH_REPO/localization.json"
 curl -o contentTemplates/topic/00_index_localization.json "$GH_REPO/00_index_localization.json"
 curl -o contentTemplates/topic/00_index.html "$GH_REPO/00_index.html"
 curl -o additionalFilesForServer/styles/custom.css "$GH_REPO/custom.css"
-curl -o additionalFilesForServer/styles/buildConfig.json "$GH_REPO/buildConfig.json"
 curl -o additionalFilesForServer/scripts/main.js "$GH_REPO/main.js"
 
 echo "Initializing Git repository..."
