@@ -4,7 +4,7 @@
     "mainLanguage": "en",
     "navigationBlacklist": ["imprint.html", "privacy.html", "error.html"],
     "noindex": ["imprint.html", "privacy.html", "error.html"],
-    "noNavigation": [index.html],
+    "noNavigation": ["index.html"],
     "iconPath": "static/icon.svg",
     "header": "Title",
     "subHeader": "sub-title",
