@@ -2,5 +2,9 @@
     "language": {
         "de": "englisch",
         "en": "english"
+    },
+    "title": {
+        "de": "Webseite",
+        "en": "Website"
     }
 }
