@@ -9,5 +9,6 @@
     "header": "Title",
     "subHeader": "sub-title",
     "copyrightSince": "2021",
-    "domain": "github.com"
+    "domain": "github.com",
+    "hasFooter": "false"
 }
