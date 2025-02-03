@@ -2,6 +2,10 @@
 
 set -e  # Exit immediately if a command exits with a non-zero status
 
+# Ask for project name
+echo "Enter project name: "
+read PROJECT_NAME
+
 # Detect OS
 ios=$(uname)
 
@@ -21,14 +25,19 @@ else
 fi
 
 echo "Setting up project directory..."
-mkdir -p "directory-name/content"
-cd "directory-name"
+mkdir -p "$PROJECT_NAME/additionalFilesForServer/static"
+mkdir -p "$PROJECT_NAME/additionalFilesForServer/styles"
+mkdir -p "$PROJECT_NAME/contentTemplates"
+cd "$PROJECT_NAME"
 
-touch buildConfig.json custom.css
-cd content
+echo "Setting GitHub repository URL..."
+GH_REPO="https://raw.githubusercontent.com/larstel/minimalistFrameworkInstall/refs/heads/main"
 
-touch localization.json
-cd ..
+echo "Downloading specific files from GitHub..."
+curl -o additionalFilesForServer/static/icon.png "$GH_REPO/icon.png"
+curl -o contentTemplates/localization.json "$GH_REPO/localization.json"
+curl -o additionalFilesForServer/styles/custom.css "$GH_REPO/custom.css"
+curl -o additionalFilesForServer/styles/buildConfig.json "$GH_REPO/buildConfig.json"
 
 echo "Initializing Git repository..."
 git init
