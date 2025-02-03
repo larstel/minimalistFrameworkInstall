@@ -14,5 +14,9 @@
     "filename": {
         "de": "index",
         "en": "index"
+    },
+    "start-page-title": {
+        "de": "Willkommen!",
+        "en": "Welcome!"
     }
 }
