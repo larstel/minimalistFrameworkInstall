@@ -27,6 +27,7 @@ fi
 echo "Setting up project directory..."
 mkdir -p "$PROJECT_NAME/additionalFilesForServer/static"
 mkdir -p "$PROJECT_NAME/additionalFilesForServer/styles"
+mkdir -p "$PROJECT_NAME/additionalFilesForServer/scripts"
 mkdir -p "$PROJECT_NAME/contentTemplates"
 cd "$PROJECT_NAME"
 
@@ -35,9 +36,11 @@ GH_REPO="https://raw.githubusercontent.com/larstel/minimalistFrameworkInstall/re
 
 echo "Downloading specific files from GitHub..."
 curl -o additionalFilesForServer/static/icon.svg "https://raw.githubusercontent.com/larstel/minimalistFramework/refs/heads/main/static/icon.svg"
+curl -o ./ "$GH_REPO/template.html"
 curl -o contentTemplates/localization.json "$GH_REPO/localization.json"
 curl -o additionalFilesForServer/styles/custom.css "$GH_REPO/custom.css"
 curl -o additionalFilesForServer/styles/buildConfig.json "$GH_REPO/buildConfig.json"
+curl -o additionalFilesForServer/scripts/main.js "$GH_REPO/main.js"
 
 echo "Initializing Git repository..."
 git init
