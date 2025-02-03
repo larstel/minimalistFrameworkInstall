@@ -36,7 +36,7 @@ GH_REPO="https://raw.githubusercontent.com/larstel/minimalistFrameworkInstall/re
 
 echo "Downloading specific files from GitHub..."
 curl -o additionalFilesForServer/static/icon.svg "https://raw.githubusercontent.com/larstel/minimalistFramework/refs/heads/main/static/icon.svg"
-curl -o ./ "$GH_REPO/template.html"
+curl -o ./template.html "$GH_REPO/template.html"
 curl -o contentTemplates/localization.json "$GH_REPO/localization.json"
 curl -o additionalFilesForServer/styles/custom.css "$GH_REPO/custom.css"
 curl -o additionalFilesForServer/styles/buildConfig.json "$GH_REPO/buildConfig.json"
