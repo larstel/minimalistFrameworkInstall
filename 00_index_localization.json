@@ -1,0 +1,18 @@
+{
+    "title": {
+        "de": "Home",
+        "en": "Home"
+    },
+    "keywords": {
+        "de": "Home, Startseite",
+        "en": "home, starting page"
+    },
+    "description": {
+        "de": "Dies ist die Startseite des Projekts",
+        "en": "This is the start page of this project."
+    },
+    "filename": {
+        "de": "index",
+        "en": "index"
+    }
+}
