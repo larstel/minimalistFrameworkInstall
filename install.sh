@@ -6,6 +6,9 @@ set -e  # Exit immediately if a command exits with a non-zero status
 echo "Enter project name: "
 read PROJECT_NAME
 
+# Prevent issues with spaces in directory names
+PROJECT_NAME=$(echo "$PROJECT_NAME" | sed 's/[[:space:]]/_/g')
+
 # Detect OS
 ios=$(uname)
 
@@ -17,7 +20,11 @@ if [[ "$ios" == "Linux" ]]; then
 
 elif [[ "$ios" == "Darwin" ]]; then
     echo "Installing dependencies for macOS..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # Check if Homebrew is installed
+    if ! command -v brew &> /dev/null; then
+        echo "Homebrew not found, installing it..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
     brew install python git
 else
     echo "Unsupported operating system: $ios"
@@ -32,10 +39,10 @@ mkdir -p "$PROJECT_NAME/contentTemplates"
 cd "$PROJECT_NAME"
 
 echo "Setting GitHub repository URL..."
-GH_REPO="https://raw.githubusercontent.com/larstel/minimalistFrameworkInstall/refs/heads/main"
+GH_REPO="https://raw.githubusercontent.com/larstel/minimalistFrameworkInstall/main"
 
 echo "Downloading specific files from GitHub..."
-curl -o additionalFilesForServer/static/icon.svg "https://raw.githubusercontent.com/larstel/minimalistFramework/refs/heads/main/static/icon.svg"
+curl -o additionalFilesForServer/static/icon.svg "$GH_REPO/static/icon.svg"
 curl -o template.html "$GH_REPO/template.html"
 curl -o contentTemplates/localization.json "$GH_REPO/localization.json"
 curl -o additionalFilesForServer/styles/custom.css "$GH_REPO/custom.css"
