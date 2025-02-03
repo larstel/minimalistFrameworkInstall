@@ -1,5 +1,5 @@
 {
-    "contentTemplatesPath": "contentTemplates/topic",
+    "contentTemplatesPath": "contentTemplates/topic/",
     "availableLanguages": ["en"],
     "mainLanguage": "en",
     "navigationBlacklist": ["imprint.html", "privacy.html", "error.html"],
